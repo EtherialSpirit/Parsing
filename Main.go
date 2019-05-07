@@ -67,15 +67,20 @@ func continueProcessingFile(readyFile []string){
 			}
 
 
-			a := regexp.MustCompile(`href="(.*?)"(.*?)?\>(/<)?(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)(/>)?\<`)
+			//a := regexp.MustCompile(`href="(.*?)"(.*?)?\>(/<)?(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)(/>)?\<`)
+			//url := a.FindString(strings.ToLower(getHTML))
+			//b := regexp.MustCompile(`\bhref="([^"]*)"[^>]*>(\<.*\>)?(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)`)
+			//urlF := b.FindStringSubmatch(url)
+
+			a := regexp.MustCompile(`<a\s[^>]*href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)<\/a>`)
 			url := a.FindString(strings.ToLower(getHTML))
-			b := regexp.MustCompile(`\bhref="([^"]*)"[^>]*>(\<.*\>)?(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)`)
+			b := regexp.MustCompile(`(.*)((<a href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)(.*)(\<\/a\>)))`)
 			urlF := b.FindStringSubmatch(url)
 
-			if url != ""{
-				falseWork := falseWork(urlF[1])
+			if url != "" && urlF !=nil{
+				falseWork := falseWork(urlF[4])
 				if falseWork==false{
-					link := condition(urlF[1], readyFile[i])
+					link := condition(urlF[4], readyFile[i])
 					fmt.Println(siteRoad{status: true, url: link})
 				}else{
 					fmt.Println(siteRoad{status: false, url: readyFile[i]})
