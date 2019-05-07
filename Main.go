@@ -74,7 +74,7 @@ func continueProcessingFile(readyFile []string){
 
 			a := regexp.MustCompile(`<a\s[^>]*href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)<\/a>`)
 			url := a.FindString(strings.ToLower(getHTML))
-			b := regexp.MustCompile(`(.*)((<a href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)(.*)(\<\/a\>)))`)
+			b := regexp.MustCompile(`(.*)((<a\s[^>]*href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)(.*)(\<\/a\>)))`)
 			urlF := b.FindStringSubmatch(url)
 
 			if url != "" && urlF !=nil{

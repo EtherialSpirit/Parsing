@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="77" column="45" lean-forward="true" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
+            <state relative-caret-position="276">
+              <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
               <folding>
                 <element signature="n#!!block;n#_check#0" />
               </folding>
@@ -92,7 +92,7 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557216471744" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557216475307" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestProject" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -147,12 +147,12 @@
       <workItem from="1555768108213" duration="5489000" />
       <workItem from="1555793998827" duration="26113000" />
       <workItem from="1556008586808" duration="4896000" />
-      <workItem from="1557141743690" duration="9248000" />
+      <workItem from="1557141743690" duration="9974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64376000" />
+    <option name="totallyTimeSpent" value="65102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="0" width="1382" height="744" extended-state="0" />
@@ -167,7 +167,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.58684653" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.58684653" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39966273" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -266,8 +266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="77" column="45" lean-forward="true" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
+        <state relative-caret-position="276">
+          <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
           <folding>
             <element signature="n#!!block;n#_check#0" />
           </folding>
