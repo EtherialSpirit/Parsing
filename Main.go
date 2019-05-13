@@ -67,24 +67,24 @@ func continueProcessingFile(readyFile []string){
 			}
 
 
-			//a := regexp.MustCompile(`href="(.*?)"(.*?)?\>(/<)?(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)(/>)?\<`)
+			//a := regexp.MustCompile(`<a\s[^>]*href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)<\/a>`)
 			//url := a.FindString(strings.ToLower(getHTML))
-			//b := regexp.MustCompile(`\bhref="([^"]*)"[^>]*>(\<.*\>)?(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)`)
+			//b := regexp.MustCompile(`(.*)((<a\s[^>]*href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)(.*)(\<\/a\>)))`)
 			//urlF := b.FindStringSubmatch(url)
 
-			a := regexp.MustCompile(`<a\s[^>]*href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)<\/a>`)
-			url := a.FindString(strings.ToLower(getHTML))
-			b := regexp.MustCompile(`(.*)((<a\s[^>]*href=\"([^\"]*)\"(.*?)?\>(контакты?|joindre|kontakte?(.*?)?|contactos?|contacta?|contacter|kontakty|contacts?(.)?(us)?(.{1,2})?)(.*)(\<\/a\>)))`)
-			urlF := b.FindStringSubmatch(url)
+			regexpString := regexp.MustCompile(`(.*)((<a\s[^>]*href=\"([^\"]*)\"(.*?)?\>(контакт(ы)?|joindre|kontakt(e)?|contacto(s)?|contact(a)?|contacter|kontakty|contacts?(\s)?(us)?)((\s|\n){1,2})?(\<\/a\>)))`)
+			url := regexpString.FindStringSubmatch(strings.ToLower(getHTML))
 
-			if url != "" && urlF !=nil{
-				falseWork := falseWork(urlF[4])
-				if falseWork==false{
-					link := condition(urlF[4], readyFile[i])
+			//url != "" &&
+
+			if url !=nil {
+				//falseWork := falseWork(url[4])
+				//if falseWork==false{
+					link := condition(url[4], readyFile[i])
 					fmt.Println(siteRoad{status: true, url: link})
-				}else{
-					fmt.Println(siteRoad{status: false, url: readyFile[i]})
-				}
+				//}else{
+				//	fmt.Println(siteRoad{status: false, url: readyFile[i]})
+				//}
 			}else{
 				fmt.Println(siteRoad{status: false, url: readyFile[i]})
 			}
